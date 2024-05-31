@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-#COlors
+#Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -30,6 +30,13 @@ for file in .??*; do
       continue
       ;;
     *)
+      echo $GREEN "Creating backup of $file in home directory" $NC
+      if [ -f "$HOME/$file" ] && [ ! -L "$HOME/$file" ]; then
+        mv -v "$HOME/$file" "$HOME/dotfiles_backup/$file"
+      else
+        echo $YELLOW "No backup created for $file. File does not exist or is a symlink." $NC
+      fi
+
       echo $GREEN "Creating symlink to $file in home directory." $NC
       ln -svf "$DOTFILES_DIR/$file" "$HOME/$file"
       ;;
@@ -47,8 +54,9 @@ chmod +x /usr/local/bin/phpstorm
 
 
 # add .paths to /etc/paths
-sudo rm /etc/paths
-sudo cat "$DOTFILES_DIR/.paths" >> /etc/paths
+#sudo rm /etc/paths
+#sudo cat "$DOTFILES_DIR/.paths" >> /etc/paths
+
 echo "Added paths to /etc/paths"
 
 # Source the .bash_profile
