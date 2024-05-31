@@ -45,20 +45,21 @@ done
 
 echo "Dotfiles setup complete!"
 
-echo "PHP Storm shotcut setup..."
+echo "PHP Storm shortcut setup..."
 # PHP Storm setup
 echo "Creating symlink for PHP Storm CLI launcher..."
-ln -svf "$DOTFILES_DIR/phpstorm" /usr/local/bin/phpstorm
+sudo -k ln -svf "$DOTFILES_DIR/phpstorm" /usr/local/bin/phpstorm
 #make it executable
 chmod +x /usr/local/bin/phpstorm
+echo "PHP Storm CLI launcher setup complete!"
 
-
+echo "Adding paths to /etc/paths..."
 # add .paths to /etc/paths
-#sudo rm /etc/paths
-#sudo cat "$DOTFILES_DIR/.paths" >> /etc/paths
+sudo -k rm /etc/paths
+sudo -k cat "$DOTFILES_DIR/.paths" >> /etc/paths
 
 echo "Added paths to /etc/paths"
 
-# Source the .bash_profile
+# Source the .zshrc
 source "$HOME/.zshrc"
 echo "Sourced .zshrc"
