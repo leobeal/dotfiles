@@ -57,8 +57,8 @@ echo "PHP Storm CLI launcher setup complete!"
 
 echo "Adding paths to /etc/paths..."
 # add .paths to /etc/paths
-sudo -k rm /etc/paths
-sudo -k cat "$DOTFILES_DIR/.paths" >> /etc/paths
+#sudo -k rm /etc/paths
+#sudo -k cat "$DOTFILES_DIR/.paths" >> /etc/paths
 
 echo "Added paths to /etc/paths"
 

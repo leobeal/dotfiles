@@ -4,5 +4,5 @@ The following will clone this repo in your $HOME directory, backup your current 
 
 ```bash
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leobeal/dotfiles/main/setup.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/leobeal/dotfiles/main/setup.sh)"
 ```
