@@ -8,7 +8,9 @@ NC='\033[0m' # No Color
 
 
 REPO_URL="git@github.com:leobeal/dotfiles.git"
-DOTFILES_DIR="$HOME/Code/dotfiles"
+# read DOTFILES_DIR from user folder parameter passed by user
+
+DOTFILES_DIR="$HOME/dotfiles"
 
 # Clone the dotfiles repository
 if [ ! -d "$DOTFILES_DIR" ]; then
@@ -61,5 +63,5 @@ sudo -k cat "$DOTFILES_DIR/.paths" >> /etc/paths
 echo "Added paths to /etc/paths"
 
 # Source the .zshrc
-source "$HOME/.zshrc"
-echo "Sourced .zshrc"
+#source "$HOME/.zshrc"
+#echo "Sourced .zshrc"
